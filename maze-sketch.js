@@ -48,6 +48,9 @@ function Cell(i,j){ //i: column coordinate (to the right), j: row coordinate (go
     if(right&&!right.visited) neighbors.push(right)
     if(bot&&!bot.visited) neighbors.push(bot)
     if(left&&!left.visited) neighbors.push(left)
+
+    if(neighbors.length()>0) return neighbors[floor(random(0,neighbors.length))]
+    else return undefined
   }
 
   this.show=function(){
@@ -61,7 +64,7 @@ function Cell(i,j){ //i: column coordinate (to the right), j: row coordinate (go
     if(this.wall[1]) line(x+cellLength,y,x+cellLength,y+cellLength)
     if(this.wall[2]) line(x+cellLength,y+cellLength,x,y+cellLength)
     if(this.wall[3]) line(x,y+cellLength,x,y)
-    if(neighbors.length()>0) return neighbors[floor(random(0,neighbors.length))]
-    else return undefined
+    
+    
   }
 }
