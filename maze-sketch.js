@@ -21,14 +21,17 @@ function draw(){
   }
 }
 
-function Cell(colLocation,rowLocation){
-  this.colLocation=colLocation
-  this.rowLocation=rowLocation
+function Cell(colCoor,rowCoor){
+  this.colCoor=colCoor
+  this.rowCoor=rowCoor
   this.wall=[true,true,true,true]
 
   this.show=function(){
-    var x=this.colLocation*cellLength
-    var y=this.rowLocation*cellLength
+    //define cell size in pixels
+    var x=this.colCoor*cellLength
+    var y=this.rowCoor*cellLength
+
+    //draw walls
     stroke(255)
     line(x,y,x+cellLength,y)
     line(x+cellLength,y,x+cellLength,y+cellLength)
